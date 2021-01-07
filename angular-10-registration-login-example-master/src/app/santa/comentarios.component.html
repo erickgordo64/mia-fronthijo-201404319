@@ -1,0 +1,12 @@
+<div class="col-sm-6" style="align-items: center;" *ngFor="let publi of users">
+    <div class="row">
+        <div class="card text-white bg-success mb-3" style="width: 1000px;">
+            <div class="card-header" style="text-shadow: black;">PUBLICACION ALGRE DE SANTA NO.{{publi.idcomentario}}</div>
+            <div class="card-body">
+                <h5 class="card-title">PUBLICACION</h5>
+                <p class="card-text">{{publi.contenido}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<a routerLink="/santa" class="btn btn-danger">Regresar</a>

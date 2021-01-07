@@ -1,0 +1,91 @@
+﻿<h1 *ngIf="isAddMode" style="color: white;">Add Carta{{carta[0].idcarta}}</h1>
+<h1 *ngIf="!isAddMode" style="color: white;">Edit Carta {{id}}</h1>
+<div class="row">
+    <div class="col-sm-6" style="height: 500;">
+      <div class="card" style="background-image: url(https://image.freepik.com/vector-gratis/juguetes-ninos-marco-lindo_1308-27460.jpg); text-align: center;">
+        <div class="card-body">
+          <p class="card-text">.</p>
+          <p class="card-text">.</p>
+          <p class="card-text">.</p>
+          <h5 class="card-title text-center">QUERIDO SANTA</h5>
+          <p class="card-text">.</p>
+          <p class="card-text text-center">ME LLAMO {{user[0].nickname}} Y TENGO {{user[0].edad}} AÑOS, QUIERO CONTARTE QUE ESTE</p>
+          <P class="card-text">AÑO ME HE PORTADO MUY BIEN CON MIS PAPAS, EN EL COLEGIO Y TAMBIEN EN CASA.</P>
+          <P class="card-text">MI DESEO PARA ESTA NAVIDAD ES:</P>
+          <a href="../" class="btn btn-primary">ENVIAR CARTA</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <h2>bastones disponibles {{bastones}}</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 30%">imagen</th>
+                        <th style="width: 30%">producto</th>
+                        <th style="width: 30%">precio</th>
+                        <th style="width: 30%">categoria</th>
+                        <th style="width: 10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of users">
+                        <td><img src="https://image.freepik.com/vector-gratis/fondo-tiranosaurio-rex-diseno-plano_52683-10354.jpg" width="100" height="100"/></td>
+                        <td>{{producto.nombre_producto}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td>{{producto.idcategoria}}</td>
+                        <td style="white-space: nowrap">
+                            <button (click)="addProducto(producto.idproducto, producto.precio)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="producto.isDeleting">
+                                <span *ngIf="!producto.isDeleting">Agregar</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="!users">
+                        <td colspan="4" class="text-center">
+                            <span class="spinner-border spinner-border-lg align-center"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="card-body">
+
+
+
+    <!-- <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img data-src="./src/assets/Santa.jpg" alt="...">
+                <div class="caption">
+                    <h3>Título de la imagen</h3>
+                    <p>esta es una prueba</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Botón</a>
+                        <a href="#" class="btn btn-default" role="button">Botón</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img data-src="./src/assets/Santa.jpg" alt="...">
+                <div class="caption">
+                    <h3>Título de la imagen</h3>
+                    <p>esta es una prueba</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Botón</a>
+                        <a href="#" class="btn btn-default" role="button">Botón</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

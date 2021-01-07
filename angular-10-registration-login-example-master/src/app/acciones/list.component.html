@@ -1,0 +1,29 @@
+﻿<h1 style="background-color: darkcyan; color: white;">Buenas Acciones para {{user[0].nickname}}</h1>
+<table class="table table-striped" style="background-color: darkcyan; color: white;">
+    <thead>
+        <tr>
+            <th style="width: 30%">titulo</th>
+            <th style="width: 30%">descripcion</th>
+            <th style="width: 30%">recompensa</th>
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let accion of users">
+            <td>{{accion.titulo}}</td>
+            <td>{{accion.descripcion}}</td>
+            <td>{{accion.recompensa}}</td>
+            <td style="white-space: nowrap">
+                <button (click)="addAccion(accion.idaccion)" class="btn btn-sm btn-danger btn-delete-user mr-1" [disabled]="user.isDeleting">
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting">Completada</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!users">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

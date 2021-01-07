@@ -1,0 +1,20 @@
+<div class="col-sm-6" style="align-items: center;" *ngFor="let publi of users">
+    <div class="row">
+        <div class="card text-white bg-success mb-3" style="width: 1000px;">
+            <div class="card-header" style="text-shadow: black;">PUBLICACION ALGRE DE SANTA NO.{{publi.idpublicacion}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{publi.titulo}}</h5>
+                <p class="card-text">{{publi.contenido}}</p>
+                <img src="{{publi.imagen}}" width="100" height="100" />
+                <div>
+                    <a routerLink="comentar/{{publi.idpublicacion}}" class="btn btn-sm btn-primary mb-3">comentar</a>
+                    <a routerLink="comentarios/{{publi.idpublicacion}}" class="btn btn-sm btn-danger mb-3">ver comentarios</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+  
+  

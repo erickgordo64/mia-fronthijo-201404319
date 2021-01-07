@@ -1,0 +1,29 @@
+<h1 style="background-color: darkcyan; color: white;">cartas tuyas {{user[0].nickname}}</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Carta</a>
+<table class="table table-striped" style="background-color: darkblue; color: white;">
+    <thead>
+        <tr>
+            <th style="width: 30%; color: white;">id carta</th>
+            <th style="width: 30%; color: white;">fecha carta</th>
+            <th style="width: 10%; color: white;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.idcarta}}</td>
+            <td>{{user.fecha_carta}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{user.idcarta}}" class="btn btn-sm btn-primary mr-1">Editar</a>
+                <button (click)="deleteUser(user.idcarta)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!user.isDeleting">borrar</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!users">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

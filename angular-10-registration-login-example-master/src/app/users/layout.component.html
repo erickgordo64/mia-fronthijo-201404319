@@ -1,0 +1,18 @@
+﻿<div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a class="nav-item nav-link" routerLink="/carta" routerLinkActive="active">Cartas</a>
+            <a class="nav-item nav-link" routerLink="/acciones" routerLinkActive="active">Buenas acciones</a>
+            <a class="nav-item nav-link" routerLink="/santa" routerLinkActive="active">actividad santa</a>
+            <a class="nav-item nav-link" routerLink="/mensajes" routerLinkActive="active">mensajes</a>
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+</div>
+<div class="p-4">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
