@@ -122,27 +122,27 @@ export class AddEditComponent implements OnInit {
     addProducto(idproducto: string, precio: number) {
         console.log(idproducto);
         if (this.isAddMode) {
-            // if (this.bastones < precio) {
-            //     this.alertService.error('bastones insuficientes')
-            // } else {
+            if (this.bastones < precio) {
+                this.alertService.error('bastones insuficientes')
+            } else {
                 this.idcarta = this.carta[0].idcarta;
                 console.log(this.idcarta);
                 this.accountService.addDetalleCarta(this.idcarta, idproducto)
                     .pipe(first())
                     .subscribe(detalle => this.detalle = detalle);
                 this.bastones = this.bastones - precio;
-           // }
+           }
 
         } else {
-            // if (this.bastones < precio) {
-            //     this.alertService.error('bastones insuficientes')
-            // } else {
+            if (this.bastones < precio) {
+                this.alertService.error('bastones insuficientes')
+            } else {
                 console.log(this.id);
                 this.accountService.addDetalleCarta(this.id, idproducto)
                     .pipe(first())
                     .subscribe(detalle => this.detalle = detalle);
                 this.bastones = this.bastones - precio;
-            //}
+            }
 
         }
     }
