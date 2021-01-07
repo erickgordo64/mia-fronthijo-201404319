@@ -122,7 +122,7 @@ export class AddEditComponent implements OnInit {
     addProducto(idproducto: string, precio: number) {
         console.log(idproducto);
         if (this.isAddMode) {
-            if (this.bastones < precio) {
+            if (this.bastones <= precio) {
                 this.alertService.error('bastones insuficientes')
             } else {
                 this.idcarta = this.carta[0].idcarta;
@@ -134,7 +134,7 @@ export class AddEditComponent implements OnInit {
            }
 
         } else {
-            if (this.bastones < precio) {
+            if (this.bastones <= precio) {
                 this.alertService.error('bastones insuficientes')
             } else {
                 console.log(this.id);
